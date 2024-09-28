@@ -1,0 +1,147 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIA DAS CRIANÇAS - CRIANÇA FELIZ</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #1a1a1a;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .neon-border {
+        border: 4px solid #ff00ff;
+        border-radius: 20px;
+        padding: 20px;
+        animation: neonFlicker 1.5s infinite alternate;
+    }
+    @keyframes neonFlicker {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% {
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+        }
+        20%, 24%, 55% {
+            box-shadow: none;
+        }
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .neon-text {
+        font-size: 32px;
+        font-weight: bold;
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        animation: neonTextFlicker 1.5s infinite alternate;
+    }
+    @keyframes neonTextFlicker {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% {
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        }
+        20%, 24%, 55% {
+            text-shadow: none;
+        }
+    }
+    #pixButton {
+        background-color: #ff00ff;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        animation: neonButtonFlicker 1.5s infinite alternate;
+    }
+    @keyframes neonButtonFlicker {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% {
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+        }
+        20%, 24%, 55% {
+            box-shadow: none;
+        }
+    }
+    #pixButton:hover {
+        background-color: #ff66ff;
+        transform: scale(1.05);
+    }
+    .heart {
+        position: absolute;
+        font-size: 20px;
+        color: #ff66ff;
+        animation: fallDown 3s linear infinite;
+        opacity: 0;
+    }
+    @keyframes fallDown {
+        0% {
+            transform: translateY(-100vh) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    .image-container {
+        margin: 20px 0;
+    }
+    .image-container img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+    .message {
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container neon-border">
+    <h1>DIA DAS CRIANÇAS</h1>
+    <div class="neon-text">CRIANÇA FELIZ</div>
+    
+    <div class="image-container">
+        <img src="cdm.png" alt="Imagem de uma criança carente" width="300" height="400">
+    </div>
+    
+    <p class="message">Cada doação é um sorriso no rosto de uma criança. Ajude-nos a tornar o Dia das Crianças especial para aqueles que mais precisam. Sua generosidade pode mudar vidas!</p>
+    
+    <button id="pixButton">DOAR VIA PIX</button>
+</div>
+
+<script>
+const pixButton = document.getElementById('pixButton');
+pixButton.addEventListener('click', () => {
+    window.location.href = "https://www.vakinha.com.br/vaquinha/5108221";
+});
+
+// Criar efeito de chuva de corações
+setInterval(() => {
+    const heart = document.createElement('div');
+    heart.innerHTML = '❤️';
+    heart.classList.add('heart');
+    heart.style.left = `${Math.random() * 100}%`;
+    document.body.appendChild(heart);
+    
+    setTimeout(() => {
+        heart.remove();
+    }, 3000);
+}, 300);
+</script>
+</body>
+</html>
