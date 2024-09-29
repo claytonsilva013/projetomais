@@ -7,8 +7,8 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background-color: #1a1a1a;
-        color: #fff;
+        background-color: #fff;
+        color: #000;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -108,12 +108,29 @@
         font-style: italic;
         margin-bottom: 20px;
     }
+    #countdown {
+        font-size: 28px;
+        font-weight: bold;
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+        animation: neonCountdown 1.5s infinite alternate;
+    }
+    @keyframes neonCountdown {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% {
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        }
+        20%, 24%, 55% {
+            text-shadow: none;
+        }
+    }
 </style>
 </head>
 <body>
 <div class="container neon-border">
     <h1>DIA DAS CRIANÇAS</h1>
     <div class="neon-text">CRIANÇA FELIZ</div>
+    
+    <div id="countdown"></div>
     
     <div class="image-container">
         <img src="cdm.png" alt="Imagem de uma criança carente" width="300" height="400">
@@ -142,6 +159,28 @@ setInterval(() => {
         heart.remove();
     }, 3000);
 }, 300);
+
+// Contagem regressiva até o Dia das Crianças (12 de outubro de 2024)
+function countdownTimer() {
+    const targetDate = new Date("October 12, 2024 00:00:00").getTime();
+    const now = new Date().getTime();
+    const timeRemaining = targetDate - now;
+
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    if (timeRemaining < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "O Dia das Crianças Chegou!";
+    }
+}
+
+const countdownInterval = setInterval(countdownTimer, 1000);
 </script>
 </body>
 </html>
