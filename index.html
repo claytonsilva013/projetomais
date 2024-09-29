@@ -14,6 +14,8 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
+        background-image: url('fundo-alegre.jpg'); /* Adicione uma imagem de fundo alegre */
+        background-size: cover;
     }
     .container {
         width: 100%;
@@ -21,6 +23,9 @@
         padding: 20px;
         box-sizing: border-box;
         text-align: center;
+        background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para contraste */
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(255, 105, 180, 0.7); /* Sombra rosada */
     }
     .neon-border {
         border: 4px solid #ff00ff;
@@ -37,19 +42,42 @@
         }
     }
     h1 {
-        font-size: 24px;
+        font-size: 28px;
+        color: #ff69b4; /* Rosa vibrante */
         margin-bottom: 10px;
     }
     .neon-text {
-        font-size: 32px;
+        font-size: 36px;
         font-weight: bold;
-        color: #00ffff;
-        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+        color: #fff;
+        background-color: #ff69b4;
+        padding: 10px;
+        border-radius: 10px;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
         animation: neonTextFlicker 1.5s infinite alternate;
     }
     @keyframes neonTextFlicker {
         0%, 18%, 22%, 25%, 53%, 57%, 100% {
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+        }
+        20%, 24%, 55% {
+            text-shadow: none;
+        }
+    }
+    #countdown {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ff69b4;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+        animation: neonCountdown 1.5s infinite alternate;
+    }
+    @keyframes neonCountdown {
+        0%, 18%, 22%, 25%, 53%, 57%, 100% {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
         }
         20%, 24%, 55% {
             text-shadow: none;
@@ -107,21 +135,7 @@
     .message {
         font-style: italic;
         margin-bottom: 20px;
-    }
-    #countdown {
-        font-size: 28px;
-        font-weight: bold;
-        color: #00ffff;
-        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-        animation: neonCountdown 1.5s infinite alternate;
-    }
-    @keyframes neonCountdown {
-        0%, 18%, 22%, 25%, 53%, 57%, 100% {
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
-        }
-        20%, 24%, 55% {
-            text-shadow: none;
-        }
+        color: #ff69b4;
     }
 </style>
 </head>
