@@ -1,200 +1,192 @@
-<html>
-<head>
+<html><head><base href="." />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DIA DAS CRIANÇAS - CRIANÇA FELIZ</title>
+<title>Dívida Ativa - Sistema de Cobrança</title>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #fff;
-        color: #000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background-image: url('fundo-alegre.jpg'); /* Adicione uma imagem de fundo alegre */
-        background-size: cover;
-    }
-    .container {
-        width: 100%;
-        max-width: 400px;
-        padding: 20px;
-        box-sizing: border-box;
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para contraste */
-        border-radius: 15px;
-        box-shadow: 0 0 15px rgba(255, 105, 180, 0.7); /* Sombra rosada */
-    }
-    .neon-border {
-        border: 4px solid #ff00ff;
-        border-radius: 20px;
-        padding: 20px;
-        animation: neonFlicker 1.5s infinite alternate;
-    }
-    @keyframes neonFlicker {
-        0%, 18%, 22%, 25%, 53%, 57%, 100% {
-            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
-        }
-        20%, 24%, 55% {
-            box-shadow: none;
-        }
-    }
-    h1 {
-        font-size: 28px;
-        color: #ff69b4; /* Rosa vibrante */
-        margin-bottom: 10px;
-    }
-    .neon-text {
-        font-size: 36px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #ff69b4;
-        padding: 10px;
-        border-radius: 10px;
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-        animation: neonTextFlicker 1.5s infinite alternate;
-    }
-    @keyframes neonTextFlicker {
-        0%, 18%, 22%, 25%, 53%, 57%, 100% {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-        }
-        20%, 24%, 55% {
-            text-shadow: none;
-        }
-    }
-    #countdown {
-        font-size: 28px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #ff69b4;
-        padding: 10px;
-        border-radius: 10px;
-        margin-top: 10px;
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-        animation: neonCountdown 1.5s infinite alternate;
-    }
-    @keyframes neonCountdown {
-        0%, 18%, 22%, 25%, 53%, 57%, 100% {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-        }
-        20%, 24%, 55% {
-            text-shadow: none;
-        }
-    }
-    #pixButton {
-        background-color: #ff00ff;
-        color: #fff;
-        border: none;
-        padding: 15px 30px;
-        font-size: 18px;
-        border-radius: 50px;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: all 0.3s ease;
-        animation: neonButtonFlicker 1.5s infinite alternate;
-    }
-    @keyframes neonButtonFlicker {
-        0%, 18%, 22%, 25%, 53%, 57%, 100% {
-            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-        }
-        20%, 24%, 55% {
-            box-shadow: none;
-        }
-    }
-    #pixButton:hover {
-        background-color: #ff66ff;
-        transform: scale(1.05);
-    }
-    .heart {
-        position: absolute;
-        font-size: 20px;
-        color: #ff66ff;
-        animation: fallDown 3s linear infinite;
-        opacity: 0;
-    }
-    @keyframes fallDown {
-        0% {
-            transform: translateY(-100vh) rotate(0deg);
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(100vh) rotate(360deg);
-            opacity: 0;
-        }
-    }
-    .image-container {
-        margin: 20px 0;
-    }
-    .image-container img {
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
-    }
-    .message {
-        font-style: italic;
-        margin-bottom: 20px;
-        color: #ff69b4;
-    }
+:root {
+  --neon-green: #0f0;
+  --dark-bg: #000;
+  --terminal-font: 'Courier New', monospace;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--neon-green);
+  font-family: var(--terminal-font);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  border: 1px solid var(--neon-green);
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: glitch 2s infinite;
+}
+
+.debtor-name {
+  font-size: 2.5em;
+  text-align: center;
+  text-transform: uppercase;
+  animation: neon 1.5s ease-in-out infinite alternate;
+  margin: 20px 0;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #0f0,
+                 0 0 20px #0f0,
+                 0 0 30px #0f0,
+                 0 0 40px #0f0;
+  }
+  to {
+    text-shadow: 0 0 5px #0f0,
+                 0 0 10px #0f0,
+                 0 0 15px #0f0,
+                 0 0 20px #0f0;
+  }
+}
+
+.digital-clock {
+  font-size: 3em;
+  text-align: center;
+  margin: 20px 0;
+  font-family: 'Digital', var(--terminal-font);
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+.countdown {
+  font-size: 24px;
+  margin: 20px 0;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 15px;
+  border: 1px solid var(--neon-green);
+}
+
 </style>
 </head>
 <body>
-<div class="container neon-border">
-    <h1>DIA DAS CRIANÇAS</h1>
-    <div class="neon-text">CRIANÇA FELIZ</div>
-    
-    <div id="countdown"></div>
-    
-    <div class="image-container">
-        <img src="cdm.png" alt="Imagem de uma criança carente" width="300" height="400">
-    </div>
-    
-    <p class="message">Cada doação é um sorriso no rosto de uma criança. Ajude-nos a tornar o Dia das Crianças especial para aqueles que mais precisam. Sua generosidade pode mudar vidas!</p>
-    
-    <button id="pixButton">DOAR VIA PIX</button>
+<div class="container">
+  <div class="header">
+    <h1>SISTEMA DE DÍVIDA ATIVA</h1>
+    <div class="matrix-rain" id="matrix-rain"></div>
+  </div>
+
+  <div class="debtor-name">
+    ERICK DE JESUS PINTO CARNEIRO
+  </div>
+
+  <div class="digital-clock" id="digital-clock">
+    00:00:00
+  </div>
+
+  <div class="debtor-info">
+    <h2>INFORMAÇÕES DO DEVEDOR</h2>
+    <p>NASCIMENTO: 17/07/1994</p>
+    <p>RG: 436259278</p>
+    <p>VALOR INICIAL: R$ 500,00</p>
+    <p>ACRÉSCIMO (30%): R$ 150,00</p>
+    <p>VALOR TOTAL: R$ 650,00</p>
+    <p>JUROS MENSAL: R$ 150,00</p>
+    <p>MULTA POR ATRASO: 5% SOBRE JUROS (R$ 7,50)</p>
+  </div>
+
+  <div class="countdown" id="countdown">
+    Tempo até próxima cobrança (5%): Calculando...
+  </div>
+
+  <button onclick="window.location.href='mailto:smtp.verificacao.smtp@gmail.com?subject=Comprovante de Pagamento - Erick de Jesus Pinto Carneiro&body=Segue em anexo o comprovante de pagamento.'">
+    ENVIAR COMPROVANTE
+  </button>
 </div>
 
 <script>
-const pixButton = document.getElementById('pixButton');
-pixButton.addEventListener('click', () => {
-    window.location.href = "https://www.vakinha.com.br/vaquinha/5108221";
-});
-
-// Criar efeito de chuva de corações
-setInterval(() => {
-    const heart = document.createElement('div');
-    heart.innerHTML = '❤️';
-    heart.classList.add('heart');
-    heart.style.left = `${Math.random() * 100}%`;
-    document.body.appendChild(heart);
+// Matrix Rain Effect
+function createMatrixRain() {
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.zIndex = '-1';
+    document.body.appendChild(canvas);
     
-    setTimeout(() => {
-        heart.remove();
-    }, 3000);
-}, 300);
-
-// Contagem regressiva até o Dia das Crianças (12 de outubro de 2024)
-function countdownTimer() {
-    const targetDate = new Date("October 12, 2024 00:00:00").getTime();
-    const now = new Date().getTime();
-    const timeRemaining = targetDate - now;
-
-    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML = 
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-    if (timeRemaining < 0) {
-        clearInterval(countdownInterval);
-        document.getElementById("countdown").innerHTML = "O Dia das Crianças Chegou!";
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const characters = "01";
+    const fontSize = 10;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+    
+    for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
     }
+    
+    function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#0F0';
+        ctx.font = fontSize + 'px monospace';
+        
+        for (let i = 0; i < drops.length; i++) {
+            const text = characters.charAt(Math.floor(Math.random() * characters.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+    
+    setInterval(draw, 33);
 }
 
-const countdownInterval = setInterval(countdownTimer, 1000);
+// Digital Clock
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('digital-clock').innerHTML = `${hours}:${minutes}:${seconds}`;
+}
+
+// Countdown Timer for 24 hours (15:34 tomorrow)
+function updateCountdown() {
+    const now = new Date();
+    const target = new Date();
+    target.setDate(target.getDate() + 1);
+    target.setHours(15, 34, 0, 0);
+    
+    const diff = target - now;
+    
+    if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = 'PRAZO EXPIRADO - MULTA DE 5% APLICADA';
+        return;
+    }
+    
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById('countdown').innerHTML = 
+        `TEMPO ATÉ COBRANÇA DE 5%: ${hours}h ${minutes}m ${seconds}s`;
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    createMatrixRain();
+    updateClock();
+    updateCountdown();
+    setInterval(updateClock, 1000);
+    setInterval(updateCountdown, 1000);
+});
 </script>
-</body>
-</html>
+</body></html>
